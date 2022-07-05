@@ -5,7 +5,7 @@ Test Teardown       Close All Applications
 
 *** Test Cases ***
 
-TC1: Call_check_on_LTE_connection
+TC1: Simultaneous_Data&Voice_Call_Check_on_LTE_connection
 
     Launch Settings App
     AppiumLibrary.Click Text    SIM card & mobile data
@@ -20,10 +20,17 @@ TC1: Call_check_on_LTE_connection
     AppiumLibrary.Click Element    id=dialpad_voice_call_button
     Sleep    1s
     AppiumLibrary.Click Text    SIM1
+    Sleep    1s
+    Launch Chrome Browser
+    Sleep    2s
+    AppiumLibrary.Input Text    id=search_box_text    speed test
+    AppiumLibrary.press keycode           66
+    Sleep    3s
+    AppiumLibrary.Wait Until Page Contains    RUN SPEED TEST
     Sleep    5s
-    AppiumLibrary.Click Element    id=incall_end_call
 
-TC1: Call_check_on_WCDMA_connection
+
+TC1: Simultaneous_Data&Voice_Call_Check_on_WCDMA_connection
 
     Launch Settings App
     AppiumLibrary.Click Text    SIM card & mobile data
@@ -38,5 +45,11 @@ TC1: Call_check_on_WCDMA_connection
     AppiumLibrary.Click Element    id=dialpad_voice_call_button
     Sleep    1s
     AppiumLibrary.Click Text    SIM1
+    Sleep    1s
+    Launch Chrome Browser
+    Sleep    2s
+    AppiumLibrary.Input Text    id=search_box_text    speed test
+    AppiumLibrary.press keycode           66
+    Sleep    3s
+    AppiumLibrary.Wait Until Page Contains    RUN SPEED TEST
     Sleep    5s
-    AppiumLibrary.Click Element    id=incall_end_call

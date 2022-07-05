@@ -2,6 +2,8 @@
 
 Resource        ../Resources_and_Keywords/Common_Functionality.resource
 
+Test Teardown   Close Application
+
 *** Test Cases ***
 
 TC1: SMS_check_on_LTE_connection

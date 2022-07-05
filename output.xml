@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220705 09:22:46.330" rpa="false" schemaversion="2">
-<suite id="s1" name="TC 19&amp;20 Call check with Data" source="D:\L&amp;T_Tech\Python_Program\AndroidProject\Mobile_Appium_Suite\TC_19&amp;20_Call_check_with_Data.robot">
-<test id="s1-t1" name="TC1: Call_check_on_LTE_connection">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220705 10:42:23.026" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 21&amp;22 Simultaneous Data&amp;Voice Call Check" source="D:\L&amp;T_Tech\Python_Program\AndroidProject\Mobile_Appium_Suite\TC_21&amp;22_Simultaneous_Data&amp;Voice_Call_Check.robot">
+<test id="s1-t1" name="TC1: Simultaneous_Data&amp;Voice_Call_Check_on_LTE_connection">
 <kw name="Launch Settings App" library="Common_Functionality">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://localhost:4723/wd/hub</arg>
@@ -16,44 +16,44 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220705 09:22:46.768" endtime="20220705 09:22:57.250"/>
+<status status="PASS" starttime="20220705 10:42:23.479" endtime="20220705 10:42:32.475"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220705 09:22:57.250" endtime="20220705 09:22:57.250"/>
+<status status="PASS" starttime="20220705 10:42:32.475" endtime="20220705 10:42:32.475"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220705 09:22:57.250" endtime="20220705 09:22:57.250"/>
+<status status="PASS" starttime="20220705 10:42:32.475" endtime="20220705 10:42:32.475"/>
 </kw>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20220705 09:22:57.609" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220705 09:22:57.250" endtime="20220705 09:22:57.609"/>
+<msg timestamp="20220705 10:42:32.834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220705 10:42:32.475" endtime="20220705 10:42:32.834"/>
 </kw>
-<status status="PASS" starttime="20220705 09:22:46.768" endtime="20220705 09:22:57.609"/>
+<status status="PASS" starttime="20220705 10:42:23.479" endtime="20220705 10:42:32.834"/>
 </kw>
 <kw name="Click Text" library="AppiumLibrary">
 <arg>SIM card &amp; mobile data</arg>
 <doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220705 09:22:57.625" endtime="20220705 09:22:58.703"/>
+<status status="PASS" starttime="20220705 10:42:32.834" endtime="20220705 10:42:33.647"/>
 </kw>
 <kw name="Click Text" library="AppiumLibrary">
 <arg>SIM2</arg>
 <doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220705 09:22:58.703" endtime="20220705 09:22:59.999"/>
+<status status="PASS" starttime="20220705 10:42:33.647" endtime="20220705 10:42:34.662"/>
 </kw>
 <kw name="Click Text" library="AppiumLibrary">
 <arg>Preferred network type</arg>
 <doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220705 09:22:59.999" endtime="20220705 09:23:01.811"/>
+<status status="PASS" starttime="20220705 10:42:34.662" endtime="20220705 10:42:36.646"/>
 </kw>
 <kw name="Click Text" library="AppiumLibrary">
 <arg>4G/3G/2G (Auto)</arg>
 <doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220705 09:23:01.811" endtime="20220705 09:23:03.670"/>
+<status status="PASS" starttime="20220705 10:42:36.646" endtime="20220705 10:42:38.619"/>
 </kw>
 <kw name="Launch Call Management App" library="Common_Functionality">
 <kw name="Open Application" library="AppiumLibrary">
@@ -70,70 +70,152 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220705 09:23:03.686" endtime="20220705 09:23:14.775"/>
+<status status="PASS" starttime="20220705 10:42:38.619" endtime="20220705 10:42:49.788"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220705 09:23:14.775" endtime="20220705 09:23:14.775"/>
+<status status="PASS" starttime="20220705 10:42:49.788" endtime="20220705 10:42:49.788"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220705 09:23:14.775" endtime="20220705 09:23:14.775"/>
+<status status="PASS" starttime="20220705 10:42:49.788" endtime="20220705 10:42:49.788"/>
 </kw>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20220705 09:23:15.438" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220705 09:23:14.775" endtime="20220705 09:23:15.438"/>
+<msg timestamp="20220705 10:42:50.288" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220705 10:42:49.788" endtime="20220705 10:42:50.303"/>
 </kw>
-<status status="PASS" starttime="20220705 09:23:03.686" endtime="20220705 09:23:15.438"/>
+<status status="PASS" starttime="20220705 10:42:38.619" endtime="20220705 10:42:50.303"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220705 09:23:16.469" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220705 09:23:15.454" endtime="20220705 09:23:16.469"/>
+<msg timestamp="20220705 10:42:51.319" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220705 10:42:50.303" endtime="20220705 10:42:51.319"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=dialpad_fab</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220705 09:23:16.469" level="INFO">Clicking element 'id=dialpad_fab'.</msg>
-<status status="PASS" starttime="20220705 09:23:16.469" endtime="20220705 09:23:16.860"/>
+<msg timestamp="20220705 10:42:51.319" level="INFO">Clicking element 'id=dialpad_fab'.</msg>
+<status status="PASS" starttime="20220705 10:42:51.319" endtime="20220705 10:42:52.646"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220705 09:23:17.891" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220705 09:23:16.876" endtime="20220705 09:23:17.891"/>
+<msg timestamp="20220705 10:42:53.662" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220705 10:42:52.646" endtime="20220705 10:42:53.662"/>
 </kw>
 <kw name="Input Value" library="AppiumLibrary">
 <arg>id=digits</arg>
 <arg>8011843630</arg>
 <doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
-<msg timestamp="20220705 09:23:17.891" level="INFO">Setting text '8011843630' into text field 'id=digits'</msg>
-<status status="PASS" starttime="20220705 09:23:17.891" endtime="20220705 09:23:19.844"/>
+<msg timestamp="20220705 10:42:53.662" level="INFO">Setting text '8011843630' into text field 'id=digits'</msg>
+<status status="PASS" starttime="20220705 10:42:53.662" endtime="20220705 10:42:54.771"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>id=dialpad_voice_call_button</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220705 09:23:19.859" level="INFO">Clicking element 'id=dialpad_voice_call_button'.</msg>
-<status status="PASS" starttime="20220705 09:23:19.859" endtime="20220705 09:23:20.843"/>
+<msg timestamp="20220705 10:42:54.787" level="INFO">Clicking element 'id=dialpad_voice_call_button'.</msg>
+<status status="PASS" starttime="20220705 10:42:54.771" endtime="20220705 10:42:56.656"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220705 09:23:21.859" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220705 09:23:20.843" endtime="20220705 09:23:21.859"/>
+<msg timestamp="20220705 10:42:57.671" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220705 10:42:56.656" endtime="20220705 10:42:57.671"/>
 </kw>
 <kw name="Click Text" library="AppiumLibrary">
 <arg>SIM1</arg>
 <doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220705 09:23:21.859" endtime="20220705 09:23:26.873"/>
+<status status="PASS" starttime="20220705 10:42:57.671" endtime="20220705 10:43:01.670"/>
 </kw>
-<status status="PASS" starttime="20220705 09:22:46.768" endtime="20220705 09:23:26.889"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220705 10:43:02.686" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220705 10:43:01.670" endtime="20220705 10:43:02.686"/>
+</kw>
+<kw name="Launch Chrome Browser" library="Common_Functionality">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${HOST_NAME}</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${device_Name}</arg>
+<arg>appPackage=${app_Package}</arg>
+<arg>appActivity=${app_Activity}</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220705 10:43:02.686" endtime="20220705 10:43:14.385"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220705 10:43:14.385" endtime="20220705 10:43:14.385"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}${/}Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220705 10:43:14.385" endtime="20220705 10:43:14.401"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220705 10:43:14.948" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220705 10:43:14.401" endtime="20220705 10:43:14.948"/>
+</kw>
+<status status="PASS" starttime="20220705 10:43:02.686" endtime="20220705 10:43:14.948"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220705 10:43:16.963" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220705 10:43:14.948" endtime="20220705 10:43:16.963"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=search_box_text</arg>
+<arg>speed test</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220705 10:43:16.963" level="INFO">Typing text 'speed test' into text field 'id=search_box_text'</msg>
+<status status="PASS" starttime="20220705 10:43:16.963" endtime="20220705 10:43:18.697"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20220705 10:43:18.697" endtime="20220705 10:43:20.774"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220705 10:43:23.789" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220705 10:43:20.774" endtime="20220705 10:43:23.789"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>RUN SPEED TEST</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20220705 10:43:23.789" endtime="20220705 10:43:26.242"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220705 10:43:31.255" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220705 10:43:26.242" endtime="20220705 10:43:31.255"/>
+</kw>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20220705 10:43:31.255" endtime="20220705 10:43:32.536"/>
+</kw>
+<kw name="Close All Applications" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20220705 10:43:32.536" endtime="20220705 10:43:32.536"/>
+</kw>
+<status status="PASS" starttime="20220705 10:42:23.479" endtime="20220705 10:43:32.536"/>
 </test>
-<status status="PASS" starttime="20220705 09:22:46.330" endtime="20220705 09:23:26.889"/>
+<status status="PASS" starttime="20220705 10:42:23.026" endtime="20220705 10:43:32.536"/>
 </suite>
 <statistics>
 <total>
@@ -142,7 +224,7 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 19&amp;20 Call check with Data">TC 19&amp;20 Call check with Data</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 21&amp;22 Simultaneous Data&amp;Voice Call Check">TC 21&amp;22 Simultaneous Data&amp;Voice Call Check</stat>
 </suite>
 </statistics>
 <errors>
