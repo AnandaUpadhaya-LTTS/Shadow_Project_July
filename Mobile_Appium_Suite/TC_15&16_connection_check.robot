@@ -5,6 +5,7 @@ Resource        ../Resources_and_Keywords/Common_Functionality.resource
 *** Test Cases ***
 
 TC1: 4G_LTE_connection_IPv4
+    Launch Chrome Browser
     AppiumLibrary.Click Element    id=menu_button
     AppiumLibrary.Click Element     id=new_tab_menu_id
     AppiumLibrary.Input Text    id=search_box_text    https://test-ipv6.com/
@@ -13,6 +14,7 @@ TC1: 4G_LTE_connection_IPv4
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
 
 TC2: 4G_LTE_connection_IPv6
+    Launch Chrome Browser
     AppiumLibrary.Click Element    id=menu_button
     AppiumLibrary.Click Element     id=new_tab_menu_id
     AppiumLibrary.Input Text    id=search_box_text    https://test-ipv6.com/

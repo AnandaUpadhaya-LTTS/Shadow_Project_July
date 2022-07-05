@@ -8,38 +8,12 @@ Test Teardown   Close Application
 
 TC1: SMS_check_on_LTE_connection
 
-    Launch Settings App
-    AppiumLibrary.Click Text    SIM card & mobile data
-    AppiumLibrary.Click Text    SIM2
-    AppiumLibrary.Click Text    Preferred network type
-    AppiumLibrary.Click Text    4G/3G/2G (Auto)
-    Launch Messaging App
-    AppiumLibrary.Click Element    id=start_chat_fab
-    Sleep    1s
-    AppiumLibrary.Input Value    id=recipient_text_view    7002539096
-    AppiumLibrary.press keycode           66
-    AppiumLibrary.Click Element    id=send_message_button_icon
-    AppiumLibrary.Click Text    SIM2
-    AppiumLibrary.Input Text    id=compose_message_text    Hello_Anup_Test_Case_Check
-    AppiumLibrary.Click Element    id=send_message_button_icon
-    Sleep    2s
+    LTE Check
+    Send Message
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
 
 TC2: SMS_check_on_WCDMA_connection
 
-    Launch Settings App
-    AppiumLibrary.Click Text    SIM card & mobile data
-    AppiumLibrary.Click Text    SIM2
-    AppiumLibrary.Click Text    Preferred network type
-    AppiumLibrary.Click Text    3G/2G (Auto)
-    Launch Messaging App
-    AppiumLibrary.Click Element    id=start_chat_fab
-    Sleep    1s
-    AppiumLibrary.Input Value    id=recipient_text_view    7002539096
-    AppiumLibrary.press keycode           66
-    AppiumLibrary.Click Element    id=send_message_button_icon
-    AppiumLibrary.Click Text    SIM2
-    AppiumLibrary.Input Text    id=compose_message_text    Hello_Anup_Test_Case_Check
-    AppiumLibrary.Click Element    id=send_message_button_icon
-    Sleep    2s
+    WCDMA Check
+    Send Message
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
