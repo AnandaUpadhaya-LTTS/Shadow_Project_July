@@ -1,8 +1,6 @@
 *** Settings ***
 
 Resource        ../Resources_and_Keywords/Common_Functionality.resource
-Test Teardown   Close Application
-Test Setup      Launch Chrome Browser
 
 *** Test Cases ***
 

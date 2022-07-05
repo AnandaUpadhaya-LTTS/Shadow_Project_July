@@ -14,7 +14,7 @@ TC1: SMS_check_on_LTE_connection
     Launch Messaging App
     AppiumLibrary.Click Element    id=start_chat_fab
     Sleep    1s
-    AppiumLibrary.Input Value    id=recipient_text_view    8721913770
+    AppiumLibrary.Input Value    id=recipient_text_view    7002539096
     AppiumLibrary.press keycode           66
     AppiumLibrary.Click Element    id=send_message_button_icon
     AppiumLibrary.Click Text    SIM2
@@ -23,7 +23,7 @@ TC1: SMS_check_on_LTE_connection
     Sleep    2s
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
 
-TC1: SMS_check_on_WCDMA_connection
+TC2: SMS_check_on_WCDMA_connection
 
     Launch Settings App
     AppiumLibrary.Click Text    SIM card & mobile data
@@ -33,7 +33,7 @@ TC1: SMS_check_on_WCDMA_connection
     Launch Messaging App
     AppiumLibrary.Click Element    id=start_chat_fab
     Sleep    1s
-    AppiumLibrary.Input Value    id=recipient_text_view    8721913770
+    AppiumLibrary.Input Value    id=recipient_text_view    7002539096
     AppiumLibrary.press keycode           66
     AppiumLibrary.Click Element    id=send_message_button_icon
     AppiumLibrary.Click Text    SIM2
