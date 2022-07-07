@@ -3,7 +3,7 @@ TEST CASES
 
 
 1. Calculate the downlink speed via http protocol on LTE Networks.
-2. Calculate the downlink speed via http protocol with LTE Networks.
+2. Calculate the uplink speed via http protocol with LTE Networks.
 3. Calculate the downlink speed with FTP protocol in 3G Networks.
 4. Calculate the uplink speed with FTP protocol in 3G Networks.
 7. 4G LTE ipv6 Test with HTTP Protocol: APN set to ipv6 only.
