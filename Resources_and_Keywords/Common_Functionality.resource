@@ -16,7 +16,7 @@ ${app_Activity}   com.google.android.apps.chrome.Main
 *** Keywords ***
 
 Launch Chrome Browser
-
+        [Documentation]     This Keyword will Launch the Browser and navigate to a new Tab
         Open Application    ${HOST_NAME}    platformName=Android     deviceName=${device_Name}     appPackage=${app_Package}     appActivity=${app_Activity}     noReset=${True}
         set selenium implicit wait      30s
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
@@ -24,39 +24,44 @@ Launch Chrome Browser
         AppiumLibrary.Click Element     id=new_tab_menu_id
 
 Launch Messaging App
-
+        [Documentation]     This Keyword will Launch the Messaging application in your Android Devices
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}    appPackage=com.google.android.apps.messaging   appActivity=com.google.android.apps.messaging.home.HomeActivity      noReset=${True}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
-Airplane mode check
+Airplane mode Switch
+        [Documentation]     This Keyword will switch the android device to Airplane mode
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     noReset=${True}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
 Launch Calculator App
+        [Documentation]     This Keyword will Launch the Calculator App in your Android Devices
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.coloros.calculator       appActivity=com.android.calculator2.Calculator     noReset=${True}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
 Launch Contact App
+        [Documentation]     This Keyword will Launch the Contact Application in your Android Device
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.google.android.contacts       appActivity=com.google.android.apps.contacts.activities.PeopleActivity     noReset=${True}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
 Launch Settings App
-        Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.android.settings       appActivity=com.oppo.settings.SettingsActivity     noReset=${True}
+        [Documentation]     This Keyword will Launch the Settings Application
+        Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.android.settings       appActivity=com.oppo.settings.SettingsActivity     noReset=${True}      fullReset=${False}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
 
 Launch Call Management App
+        [Documentation]     This Keyword will Launch the Phone/Dialer in Android Devices
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.google.android.dialer       appActivity=com.android.dialer.main.impl.MainActivity   noReset=${True}      appWaitForLaunch=${False}
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
-LTE Check
-
+Set Preferred network As LTE
+        [Documentation]     This Keyword will set the Preffered Network to LTE in Android Devices
         Launch Settings App
         set selenium implicit wait      30s
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
@@ -69,7 +74,8 @@ LTE Check
         AppiumLibrary.Click Text    4G/3G/2G (Auto)
         Sleep    1s
 
-WCDMA Check
+Set Preferred network As WCDMA
+        [Documentation]     This Keyword will set the Preffered Network to WCDMA in Android Devices
         Launch Settings App
         set selenium implicit wait      30s
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
@@ -83,26 +89,95 @@ WCDMA Check
         Sleep    1s
 
 Call Phone
+        [Documentation]     This Keyword will open dialer and call the given phone_no in Android Devices
+        [Arguments]     ${Phone_no}
         Launch Call Management App
         set selenium implicit wait      30s
         Sleep    1s
         AppiumLibrary.Click Element     id=dialpad_fab
         Sleep    1s
-        AppiumLibrary.Input Value    id=digits    8011843630
+        AppiumLibrary.Input Value    id=digits    ${Phone_no}
         AppiumLibrary.Click Element    id=dialpad_voice_call_button
         Sleep    1s
         AppiumLibrary.Click Text    SIM1
         Sleep    1s
 
 Send Message
+        [Documentation]     This Keyword will Send Message to a phone from the android device
+        [Arguments]     ${Phone_no}
         Launch Messaging App
         set selenium implicit wait      30s
         AppiumLibrary.Click Element    id=start_chat_fab
         Sleep    1s
-        AppiumLibrary.Input Value    id=recipient_text_view    7002539096
+        AppiumLibrary.Input Value    id=recipient_text_view    ${Phone_no}
         AppiumLibrary.press keycode           66
         AppiumLibrary.Click Element    id=send_message_button_icon
         AppiumLibrary.Click Text    SIM2
         AppiumLibrary.Input Text    id=compose_message_text    Hello_Ananda_Test_Case_Check
         AppiumLibrary.Click Element    id=send_message_button_icon
         Sleep    2s
+
+Test IPv6 In Browser
+        [Documentation]     This Keyword will Launch Browser and Chect if the Android device has IPv6 Compatibility
+        Launch Chrome Browser
+        set selenium implicit wait      30s
+        AppiumLibrary.Input Text    id=search_box_text    https://test-ipv6.com/
+        AppiumLibrary.press keycode           66
+        AppiumLibrary.Wait Until Page Contains    Your IPv6 address on the public Internet appears to be     timeout=5s
+
+Test IPv4 In Browser
+        [Documentation]     This Keyword will Launch Browser and Chect if the Android device has IPv4 Compatibility
+        Launch Chrome Browser
+        set selenium implicit wait      30s
+        AppiumLibrary.Input Text    id=search_box_text    https://test-ipv6.com/
+        AppiumLibrary.press keycode           66
+        AppiumLibrary.Wait Until Page Contains    Your IPv4 address on the public Internet appears to be     timeout=5s
+
+Run Speed Test in Browser
+        [Documentation]     This Keyword will Launch Browser and check the internet connection in the Android device
+        Launch Chrome Browser
+        Sleep    1s
+        set selenium implicit wait      30s
+        AppiumLibrary.Input Text    id=search_box_text    speed test
+        AppiumLibrary.press keycode           66
+        Sleep    1s
+        AppiumLibrary.Wait Until Page Contains    RUN SPEED TEST
+        Sleep    1s
+        Close All Applications
+
+Direct Test File Download Link
+        [Documentation]     This Keyword will Launch Browser download a demo file in the Android device
+        set selenium implicit wait      30s
+        Launch Chrome Browser
+        Sleep    1s
+        AppiumLibrary.Input Text    id=search_box_text    https://drive.google.com/uc?export=download&id=16LykHzZOb1kAxr4t_NPKHIrbYnUR9iCg
+        ${time1}    Get Current Date
+        AppiumLibrary.press keycode           66
+        Open Notifications
+        AppiumLibrary.Wait Until Page Contains    Download complete     timeout=500s
+        Press Keycode    4
+        ${time2}   Get Current Date
+        ${final_time}     Subtract Date From Date     ${time2}        ${time1}
+        Press Keycode    3
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        Log To Console    ${final_time}
+
+
+Set ARN to IPv4 or IPv6 or Both
+        [Documentation]     This Keyword will Set ARN to IPv4/IPv6 or both based on input on the android device
+        [Arguments]     ${ARN}
+        Launch Settings App
+        set selenium implicit wait      10s
+        AppiumLibrary.Click Text    SIM card & mobile data
+        AppiumLibrary.Click Text    SIM2
+        AppiumLibrary.Click Text    Access point names
+        Sleep    1s
+        AppiumLibrary.Click Text    Airtel MMS
+        Scroll        //android.widget.TextView[@text="MCC"]       //android.widget.TextView[@text="Server"]
+        Scroll        //android.widget.TextView[@text="APN Protocol"]       //android.widget.TextView[@text="MMS Port"]
+        AppiumLibrary.Click Text    APN Protocol
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="${ARN}"]
+        AppiumLibrary.Click Element    //android.widget.TextView[@content-desc="save"]
+        AppiumLibrary.Click Element    //android.widget.Button[@text="Save"]
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots

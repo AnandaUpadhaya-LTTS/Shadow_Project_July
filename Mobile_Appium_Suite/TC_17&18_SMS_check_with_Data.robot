@@ -4,16 +4,19 @@ Resource        ../Resources_and_Keywords/Common_Functionality.resource
 
 Test Teardown   Close Application
 
+*** Variables ***
+
+${Phone_no}     7002539096
+
 *** Test Cases ***
 
 TC1: SMS_check_on_LTE_connection
-
-    LTE Check
-    Send Message
+    Set Preferred network As LTE
+    Send Message    ${Phone_no}
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
 
 TC2: SMS_check_on_WCDMA_connection
 
-    WCDMA Check
-    Send Message
+    Set Preferred network As WCDMA
+    Send Message     ${Phone_no}
     Set Screenshot Directory    ${EXECDIR}${/}Screenshots
