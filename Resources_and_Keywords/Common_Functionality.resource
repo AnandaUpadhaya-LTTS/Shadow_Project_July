@@ -4,9 +4,7 @@ Library     DateTime
 Library     SeleniumLibrary
 Library     AppiumLibrary
 
-
 *** Variables ***
-
 ${HOST_NAME}     http://localhost:4723/wd/hub
 ${device_Name}    US699DH6YSYHVGJ7
 ${app_Package}    com.android.chrome
@@ -50,7 +48,7 @@ Launch Contact App
 Launch Settings App
         [Documentation]     This Keyword will Launch the Settings Application
         Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${device_Name}     appPackage=com.android.settings       appActivity=com.oppo.settings.SettingsActivity     noReset=${True}      fullReset=${False}
-        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        SeleniumLibrary.Set Screenshot Directory    ${EXECDIR}${/}Screenshots
         set selenium implicit wait      30s
 
 
@@ -71,11 +69,22 @@ Set Preferred network As LTE
         Sleep    1s
         AppiumLibrary.Click Text    Preferred network type
         Sleep    1s
-        AppiumLibrary.Click Text    4G/3G/2G (Auto)
+        AppiumLibrary.Click Element    //android.widget.CheckedTextView[@text="4G/3G/2G (Auto)"]
         Sleep    1s
 
-Set Preferred network As WCDMA
-        [Documentation]     This Keyword will set the Preffered Network to WCDMA in Android Devices
+Validate if the Preferred network is set to LTE
+        [Documentation]     This Keyword will validate if the Preffered Network is set to LTE in Android Devices
+        Launch Settings App
+        set selenium implicit wait      30s
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        AppiumLibrary.Click Text    SIM card & mobile data
+        Sleep    1s
+        AppiumLibrary.Click Text    SIM2
+        Sleep    1s
+        AppiumLibrary.Wait Until Page Contains    4G/3G/2G (Auto)
+
+Set Preferred network As 3G
+        [Documentation]     This Keyword will set the Preffered Network to 3G in Android Devices
         Launch Settings App
         set selenium implicit wait      30s
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
@@ -85,8 +94,45 @@ Set Preferred network As WCDMA
         Sleep    1s
         AppiumLibrary.Click Text    Preferred network type
         Sleep    1s
-        AppiumLibrary.Click Text    3G/2G (Auto)
+        AppiumLibrary.Click Element    //android.widget.CheckedTextView[@text="3G/2G (Auto)"]
         Sleep    1s
+
+Validate if the Preferred network is set to 3G
+        [Documentation]     This Keyword will validate if the Preffered Network is set to 3G in Android Devices
+        Launch Settings App
+        set selenium implicit wait      30s
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        AppiumLibrary.Click Text    SIM card & mobile data
+        Sleep    1s
+        AppiumLibrary.Click Text    SIM2
+        Sleep    1s
+        AppiumLibrary.Wait Until Page Contains    3G/2G (Auto)
+
+Set Preferred network As 2G
+        [Documentation]     This Keyword will set the Preffered Network to 2G only in Android Devices
+        Launch Settings App
+        set selenium implicit wait      30s
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        AppiumLibrary.Click Text    SIM card & mobile data
+        Sleep    1s
+        AppiumLibrary.Click Text    SIM2
+        Sleep    1s
+        AppiumLibrary.Click Text    Preferred network type
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.CheckedTextView[@text="2G Only"]
+        Sleep    1s
+
+Validate if the Preferred network is set to 2G
+        [Documentation]     This Keyword will validate if the Preffered Network is set to 2G in Android Devices
+        Launch Settings App
+        set selenium implicit wait      30s
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+        AppiumLibrary.Click Text    SIM card & mobile data
+        Sleep    1s
+        AppiumLibrary.Click Text    SIM2
+        Sleep    1s
+        AppiumLibrary.Wait Until Page Contains    2G Only
+
 
 Call Phone
         [Documentation]     This Keyword will open dialer and call the given phone_no in Android Devices
@@ -181,3 +227,79 @@ Set ARN to IPv4 or IPv6 or Both
         AppiumLibrary.Click Element    //android.widget.TextView[@content-desc="save"]
         AppiumLibrary.Click Element    //android.widget.Button[@text="Save"]
         Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+
+
+FTP_Download
+        [Documentation]     This Keyword will download a FTP file in the android device
+        [Arguments]     ${file_name}
+        Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${deviceName}       appPackage=com.wftpserver.ftprush   appActivity=crc64479b29261e5a40c6.SplashActivity      noReset=${True}
+        Sleep    10s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="Demo"]
+        Sleep    10s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="download"]
+        Sleep    10s
+        AppiumLibrary.Click Element         //android.widget.TextView[@text=${file_name}]
+        AppiumLibrary.Wait Until Page Contains    Open     timeout=300s
+        Log To Console    "FTP File Downloaded"
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+
+FTP_Upload
+        [Documentation]     This Keyword will upload a FTP file in the android device
+        [Arguments]     ${file_name}
+        Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${deviceName}       appPackage=com.wftpserver.ftprush   appActivity=crc64479b29261e5a40c6.SplashActivity      noReset=${True}
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="Demo"]
+        Sleep    10s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="upload"]
+        Sleep    10s
+        AppiumLibrary.Click Element    //android.widget.Button[@bounds="[651,68][703,154]"]
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="Upload file"]
+        Sleep    2s
+        AppiumLibrary.Click Element    //android.widget.CompoundButton[@text="Documents"]
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text=${file_name}]
+        #Validation here
+        AppiumLibrary.Wait Until Page Contains    /upload/     timeout=10s
+        Log To Console    FTP File Uploaded
+        Set Screenshot Directory    ${EXECDIR}${/}Screenshots
+
+HTTP Upload
+        [Documentation]     This Keyword will upload a FTP file in the android device
+        [Arguments]     ${file_name}
+        Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=${deviceName}       appPackage=com.google.android.apps.docs   appActivity=com.google.android.apps.docs.drive.startup.StartupActivity      noReset=${True}
+        Sleep    1s
+        AppiumLibrary.Click Element    id=navigation_bar_item_active_indicator_view
+        Sleep    1s
+        AppiumLibrary.Click Element    id=extended_fab
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text="Upload"]
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.CompoundButton[@text="Documents"]
+        Sleep    1s
+        AppiumLibrary.Click Element    //android.widget.TextView[@text=${file_name}]
+        #Validation here
+        AppiumLibrary.Wait Until Page Contains    Test.zip.pdf     timeout=10s
+        Log To Console    HTTP File Uploaded
+
+
+Add Contact
+        [Documentation]     This Keyword will create a new contact in the android device
+        [Arguments]     ${first_name}       ${last_name}        ${Phone_number}
+        Set Selenium Implicit Wait    10s
+        Launch Contact App
+        AppiumLibrary.Click Element    id=floating_action_button
+        AppiumLibrary.Input Text    xpath=//android.widget.EditText[@text="First name"]    ${first_name}
+        AppiumLibrary.Input Text    xpath=//android.widget.EditText[@text="Last name"]    ${last_name}
+        AppiumLibrary.Input Value    xpath=//android.widget.EditText[@text="Phone"]    ${Phone_number}
+        AppiumLibrary.Click Element    xpath=//android.widget.Button[@text="Save"]
+
+Validate Contact
+        [Documentation]     This Keyword will validate a newly created contact in the android device
+        [Arguments]     ${first_name}       ${last_name}        ${Phone_number}
+        Set Selenium Implicit Wait    10s
+        Launch Contact App
+        Sleep    2s
+        AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Search contacts"]
+        AppiumLibrary.Input Text    id=open_search_view_edit_text    ${first_name}
+        AppiumLibrary.Wait Until Page Contains    ${last_name}

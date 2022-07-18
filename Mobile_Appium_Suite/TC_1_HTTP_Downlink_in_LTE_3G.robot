@@ -1,32 +1,27 @@
 *** Settings ***
 
 Resource        ../Resources_and_Keywords/Common_Functionality.resource
-
-*** Variables ***
-
-${Phone_no}     8011843630
-${file_name}    "Test.zip.pdf"
+Library    AutoItLibrary
 
 *** Test Cases ***
 
-TC23: Bidirectional Data Transfer on LTE connection
-
+TC_1_1:Download_link_check_LTE
     Set Preferred network As LTE
     Validate if the Preferred network is set to LTE
     # Keycode 3 will take you to the homepage
     Press Keycode    3
     Direct Test File Download Link
-    HTTP Upload     ${file_name}
-    # Keycode 3 will take you to the homepage
-    Press Keycode    3
 
-TC24: Bidirectional Data Transfer on 3G connection
-
+TC_1_2:Download_link_check_3G
     Set Preferred network As 3G
     Validate if the Preferred network is set to 3G
     # Keycode 3 will take you to the homepage
     Press Keycode    3
     Direct Test File Download Link
-    HTTP Upload     ${file_name}
+
+TC_1_3:Download_link_check_2G
+    Set Preferred network As 2G
+    Validate if the Preferred network is set to 2G
     # Keycode 3 will take you to the homepage
     Press Keycode    3
+    Direct Test File Download Link

@@ -1,115 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220716 17:52:47.334" rpa="false" schemaversion="2">
-<suite id="s1" name="TC 1 Downlink in LTE WCDMA" source="D:\L&amp;T_Tech\Python_Program\AndroidProject\Mobile_Appium_Suite\TC_1_Downlink_in_LTE_WCDMA.robot">
-<test id="s1-t1" name="TC1:Download_link_check_LTE">
-<kw name="Set Preferred network As LTE" library="Common_Functionality">
-<doc>This Keyword will set the Preffered Network to LTE in Android Devices</doc>
-<kw name="Launch Settings App" library="Common_Functionality">
-<doc>This Keyword will Launch the Settings Application</doc>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220717 18:26:10.431" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 5 Add Contact Validate" source="D:\L&amp;T_Tech\Python_Program\AndroidProject\Mobile_Appium_Suite\TC_5_Add_Contact_Validate.robot">
+<test id="s1-t1" name="TC_5:Add_Contact_Automation">
+<kw name="Add Contact" library="Common_Functionality">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${Phone_number}</arg>
+<doc>This Keyword will create a new contact in the android device</doc>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220717 18:26:10.913" endtime="20220717 18:26:10.913"/>
+</kw>
+<kw name="Launch Contact App" library="Common_Functionality">
+<doc>This Keyword will Launch the Contact Application in your Android Device</doc>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://localhost:4723/wd/hub</arg>
 <arg>platformName=Android</arg>
 <arg>deviceName=${device_Name}</arg>
-<arg>appPackage=com.android.settings</arg>
-<arg>appActivity=com.oppo.settings.SettingsActivity</arg>
-<arg>noReset=${True}</arg>
-<arg>fullReset=${False}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220716 17:52:51.148" endtime="20220716 17:53:13.366"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}Screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:53:13.366" endtime="20220716 17:53:13.381"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:53:13.381" endtime="20220716 17:53:13.381"/>
-</kw>
-<status status="PASS" starttime="20220716 17:52:51.148" endtime="20220716 17:53:13.381"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:53:13.381" endtime="20220716 17:53:13.381"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}Screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:53:13.381" endtime="20220716 17:53:13.381"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>SIM card &amp; mobile data</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:53:13.381" endtime="20220716 17:53:14.943"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:53:15.959" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:53:14.943" endtime="20220716 17:53:15.959"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>SIM2</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:53:15.959" endtime="20220716 17:53:16.959"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:53:17.974" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:53:16.959" endtime="20220716 17:53:17.974"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>Preferred network type</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:53:17.974" endtime="20220716 17:53:19.958"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:53:20.973" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:53:19.958" endtime="20220716 17:53:20.973"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>4G/3G/2G (Auto)</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:53:20.973" endtime="20220716 17:53:22.925"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:53:23.931" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:53:22.925" endtime="20220716 17:53:23.931"/>
-</kw>
-<status status="PASS" starttime="20220716 17:52:51.148" endtime="20220716 17:53:23.931"/>
-</kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>3</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:53:23.931" endtime="20220716 17:53:24.556"/>
-</kw>
-<kw name="Direct Test File Download Link" library="Common_Functionality">
-<doc>This Keyword will Launch Browser download a demo file in the Android device</doc>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:53:24.556" endtime="20220716 17:53:24.556"/>
-</kw>
-<kw name="Launch Chrome Browser" library="Common_Functionality">
-<doc>This Keyword will Launch the Browser and navigate to a new Tab</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${HOST_NAME}</arg>
-<arg>platformName=Android</arg>
-<arg>deviceName=${device_Name}</arg>
-<arg>appPackage=${app_Package}</arg>
-<arg>appActivity=${app_Activity}</arg>
+<arg>appPackage=com.google.android.contacts</arg>
+<arg>appActivity=com.google.android.apps.contacts.activities.PeopleActivity</arg>
 <arg>noReset=${True}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
@@ -117,213 +27,73 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220716 17:53:24.556" endtime="20220716 17:53:37.678"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:53:37.678" endtime="20220716 17:53:37.678"/>
+<status status="PASS" starttime="20220717 18:26:10.913" endtime="20220717 18:26:21.011"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:53:37.678" endtime="20220716 17:53:37.678"/>
+<status status="PASS" starttime="20220717 18:26:21.011" endtime="20220717 18:26:21.011"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220717 18:26:21.011" endtime="20220717 18:26:21.011"/>
+</kw>
+<status status="PASS" starttime="20220717 18:26:10.913" endtime="20220717 18:26:21.011"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
-<arg>id=menu_button</arg>
+<arg>id=floating_action_button</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220716 17:53:37.678" level="INFO">Clicking element 'id=menu_button'.</msg>
-<status status="PASS" starttime="20220716 17:53:37.678" endtime="20220716 17:53:41.010"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>id=new_tab_menu_id</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220716 17:53:41.014" level="INFO">Clicking element 'id=new_tab_menu_id'.</msg>
-<status status="PASS" starttime="20220716 17:53:41.010" endtime="20220716 17:53:41.121"/>
-</kw>
-<status status="PASS" starttime="20220716 17:53:24.556" endtime="20220716 17:53:41.122"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:53:42.125" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:53:41.122" endtime="20220716 17:53:42.125"/>
+<msg timestamp="20220717 18:26:21.027" level="INFO">Clicking element 'id=floating_action_button'.</msg>
+<status status="PASS" starttime="20220717 18:26:21.011" endtime="20220717 18:26:22.202"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>id=search_box_text</arg>
-<arg>https://drive.google.com/uc?export=download&amp;id=16LykHzZOb1kAxr4t_NPKHIrbYnUR9iCg</arg>
+<arg>xpath=//android.widget.EditText[@text="First name"]</arg>
+<arg>${first_name}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220716 17:53:42.125" level="INFO">Typing text 'https://drive.google.com/uc?export=download&amp;id=16LykHzZOb1kAxr4t_NPKHIrbYnUR9iCg' into text field 'id=search_box_text'</msg>
-<status status="PASS" starttime="20220716 17:53:42.125" endtime="20220716 17:53:43.991"/>
+<msg timestamp="20220717 18:26:22.212" level="INFO">Typing text 'Test' into text field 'xpath=//android.widget.EditText[@text="First name"]'</msg>
+<status status="PASS" starttime="20220717 18:26:22.202" endtime="20220717 18:26:26.033"/>
 </kw>
-<kw name="Get Current Date" library="DateTime">
-<var>${time1}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220716 17:53:43.991" level="INFO">${time1} = 2022-07-16 17:53:43.991</msg>
-<status status="PASS" starttime="20220716 17:53:43.991" endtime="20220716 17:53:43.991"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Last name"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220717 18:26:26.042" level="INFO">Typing text 'Number' into text field 'xpath=//android.widget.EditText[@text="Last name"]'</msg>
+<status status="PASS" starttime="20220717 18:26:26.033" endtime="20220717 18:26:28.041"/>
 </kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>66</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:53:43.991" endtime="20220716 17:53:46.037"/>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Phone"]</arg>
+<arg>${Phone_number}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20220717 18:26:28.057" level="INFO">Setting text '8011843631' into text field 'xpath=//android.widget.EditText[@text="Phone"]'</msg>
+<status status="PASS" starttime="20220717 18:26:28.047" endtime="20220717 18:26:31.141"/>
 </kw>
-<kw name="Open Notifications" library="AppiumLibrary">
-<doc>Opens and expands an Android device's notification drawer.</doc>
-<status status="PASS" starttime="20220716 17:53:46.037" endtime="20220716 17:53:46.912"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text="Save"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 18:26:31.151" level="INFO">Clicking element 'xpath=//android.widget.Button[@text="Save"]'.</msg>
+<status status="PASS" starttime="20220717 18:26:31.141" endtime="20220717 18:26:34.031"/>
 </kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>Download complete</arg>
-<arg>timeout=500s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20220716 17:53:46.912" endtime="20220716 17:53:56.388"/>
+<status status="PASS" starttime="20220717 18:26:10.913" endtime="20220717 18:26:34.031"/>
 </kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>4</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:53:56.388" endtime="20220716 17:53:56.951"/>
+<kw name="Validate Contact" library="Common_Functionality">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${Phone_number}</arg>
+<doc>This Keyword will validate a newly created contact in the android device</doc>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220717 18:26:34.036" endtime="20220717 18:26:34.036"/>
 </kw>
-<kw name="Get Current Date" library="DateTime">
-<var>${time2}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220716 17:53:56.951" level="INFO">${time2} = 2022-07-16 17:53:56.951</msg>
-<status status="PASS" starttime="20220716 17:53:56.951" endtime="20220716 17:53:56.951"/>
-</kw>
-<kw name="Subtract Date From Date" library="DateTime">
-<var>${final_time}</var>
-<arg>${time2}</arg>
-<arg>${time1}</arg>
-<doc>Subtracts date from another date and returns time between.</doc>
-<msg timestamp="20220716 17:53:56.998" level="INFO">${final_time} = 12.96</msg>
-<status status="PASS" starttime="20220716 17:53:56.951" endtime="20220716 17:53:56.998"/>
-</kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>3</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:53:56.998" endtime="20220716 17:53:58.075"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}Screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:53:58.075" endtime="20220716 17:53:58.075"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${final_time}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220716 17:53:58.075" endtime="20220716 17:53:58.075"/>
-</kw>
-<status status="PASS" starttime="20220716 17:53:24.556" endtime="20220716 17:53:58.075"/>
-</kw>
-<status status="PASS" starttime="20220716 17:52:51.148" endtime="20220716 17:53:58.075"/>
-</test>
-<test id="s1-t2" name="TC2:Download_link_check_WCDMA">
-<kw name="Set Preferred network As WCDMA" library="Common_Functionality">
-<doc>This Keyword will set the Preffered Network to WCDMA in Android Devices</doc>
-<kw name="Launch Settings App" library="Common_Functionality">
-<doc>This Keyword will Launch the Settings Application</doc>
+<kw name="Launch Contact App" library="Common_Functionality">
+<doc>This Keyword will Launch the Contact Application in your Android Device</doc>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://localhost:4723/wd/hub</arg>
 <arg>platformName=Android</arg>
 <arg>deviceName=${device_Name}</arg>
-<arg>appPackage=com.android.settings</arg>
-<arg>appActivity=com.oppo.settings.SettingsActivity</arg>
-<arg>noReset=${True}</arg>
-<arg>fullReset=${False}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220716 17:53:58.091" endtime="20220716 17:54:08.216"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}Screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:54:08.216" endtime="20220716 17:54:08.216"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:54:08.216" endtime="20220716 17:54:08.216"/>
-</kw>
-<status status="PASS" starttime="20220716 17:53:58.091" endtime="20220716 17:54:08.216"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:54:08.216" endtime="20220716 17:54:08.216"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}Screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:54:08.216" endtime="20220716 17:54:08.216"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>SIM card &amp; mobile data</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:54:08.216" endtime="20220716 17:54:10.403"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:54:11.419" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:54:10.403" endtime="20220716 17:54:11.419"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>SIM2</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:54:11.419" endtime="20220716 17:54:13.100"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:54:14.131" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:54:13.115" endtime="20220716 17:54:14.131"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>Preferred network type</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:54:14.131" endtime="20220716 17:54:14.943"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:54:15.958" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:54:14.943" endtime="20220716 17:54:15.958"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>3G/2G (Auto)</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20220716 17:54:15.958" endtime="20220716 17:54:16.146"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:54:17.161" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:54:16.146" endtime="20220716 17:54:17.161"/>
-</kw>
-<status status="PASS" starttime="20220716 17:53:58.091" endtime="20220716 17:54:17.161"/>
-</kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>3</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:54:17.161" endtime="20220716 17:54:18.325"/>
-</kw>
-<kw name="Direct Test File Download Link" library="Common_Functionality">
-<doc>This Keyword will Launch Browser download a demo file in the Android device</doc>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:54:18.325" endtime="20220716 17:54:18.325"/>
-</kw>
-<kw name="Launch Chrome Browser" library="Common_Functionality">
-<doc>This Keyword will Launch the Browser and navigate to a new Tab</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${HOST_NAME}</arg>
-<arg>platformName=Android</arg>
-<arg>deviceName=${device_Name}</arg>
-<arg>appPackage=${app_Package}</arg>
-<arg>appActivity=${app_Activity}</arg>
+<arg>appPackage=com.google.android.contacts</arg>
+<arg>appActivity=com.google.android.apps.contacts.activities.PeopleActivity</arg>
 <arg>noReset=${True}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
@@ -331,114 +101,63 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220716 17:54:18.341" endtime="20220716 17:54:29.421"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220716 17:54:29.421" endtime="20220716 17:54:29.421"/>
+<status status="PASS" starttime="20220717 18:26:34.036" endtime="20220717 18:26:45.391"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:54:29.421" endtime="20220716 17:54:29.421"/>
+<status status="PASS" starttime="20220717 18:26:45.391" endtime="20220717 18:26:45.391"/>
 </kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>id=menu_button</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220716 17:54:29.421" level="INFO">Clicking element 'id=menu_button'.</msg>
-<status status="PASS" starttime="20220716 17:54:29.421" endtime="20220716 17:54:32.898"/>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220717 18:26:45.391" endtime="20220717 18:26:45.391"/>
 </kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>id=new_tab_menu_id</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220716 17:54:32.913" level="INFO">Clicking element 'id=new_tab_menu_id'.</msg>
-<status status="PASS" starttime="20220716 17:54:32.898" endtime="20220716 17:54:33.023"/>
-</kw>
-<status status="PASS" starttime="20220716 17:54:18.325" endtime="20220716 17:54:33.023"/>
+<status status="PASS" starttime="20220717 18:26:34.036" endtime="20220717 18:26:45.391"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220716 17:54:34.038" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220716 17:54:33.023" endtime="20220716 17:54:34.038"/>
+<msg timestamp="20220717 18:26:47.392" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220717 18:26:45.391" endtime="20220717 18:26:47.392"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text="Search contacts"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 18:26:47.401" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Search contacts"]'.</msg>
+<status status="PASS" starttime="20220717 18:26:47.392" endtime="20220717 18:26:49.062"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>id=search_box_text</arg>
-<arg>https://drive.google.com/uc?export=download&amp;id=16LykHzZOb1kAxr4t_NPKHIrbYnUR9iCg</arg>
+<arg>id=open_search_view_edit_text</arg>
+<arg>${first_name}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220716 17:54:34.038" level="INFO">Typing text 'https://drive.google.com/uc?export=download&amp;id=16LykHzZOb1kAxr4t_NPKHIrbYnUR9iCg' into text field 'id=search_box_text'</msg>
-<status status="PASS" starttime="20220716 17:54:34.038" endtime="20220716 17:54:34.959"/>
-</kw>
-<kw name="Get Current Date" library="DateTime">
-<var>${time1}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220716 17:54:34.974" level="INFO">${time1} = 2022-07-16 17:54:34.974</msg>
-<status status="PASS" starttime="20220716 17:54:34.974" endtime="20220716 17:54:34.974"/>
-</kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>66</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:54:34.974" endtime="20220716 17:54:37.083"/>
-</kw>
-<kw name="Open Notifications" library="AppiumLibrary">
-<doc>Opens and expands an Android device's notification drawer.</doc>
-<status status="PASS" starttime="20220716 17:54:37.083" endtime="20220716 17:54:37.989"/>
+<msg timestamp="20220717 18:26:49.062" level="INFO">Typing text 'Test' into text field 'id=open_search_view_edit_text'</msg>
+<status status="PASS" starttime="20220717 18:26:49.062" endtime="20220717 18:26:50.342"/>
 </kw>
 <kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>Download complete</arg>
-<arg>timeout=500s</arg>
+<arg>${last_name}</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20220716 17:54:37.989" endtime="20220716 17:54:39.911"/>
+<status status="PASS" starttime="20220717 18:26:50.342" endtime="20220717 18:26:53.331"/>
 </kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>4</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:54:39.911" endtime="20220716 17:54:39.973"/>
-</kw>
-<kw name="Get Current Date" library="DateTime">
-<var>${time2}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220716 17:54:39.973" level="INFO">${time2} = 2022-07-16 17:54:39.973</msg>
-<status status="PASS" starttime="20220716 17:54:39.973" endtime="20220716 17:54:39.973"/>
-</kw>
-<kw name="Subtract Date From Date" library="DateTime">
-<var>${final_time}</var>
-<arg>${time2}</arg>
-<arg>${time1}</arg>
-<doc>Subtracts date from another date and returns time between.</doc>
-<msg timestamp="20220716 17:54:39.973" level="INFO">${final_time} = 4.999</msg>
-<status status="PASS" starttime="20220716 17:54:39.973" endtime="20220716 17:54:39.973"/>
-</kw>
-<kw name="Press Keycode" library="AppiumLibrary">
-<arg>3</arg>
-<doc>Sends a press of keycode to the device.</doc>
-<status status="PASS" starttime="20220716 17:54:39.973" endtime="20220716 17:54:41.941"/>
+<status status="PASS" starttime="20220717 18:26:34.036" endtime="20220717 18:26:53.331"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}Screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220716 17:54:41.941" endtime="20220716 17:54:41.941"/>
+<status status="PASS" starttime="20220717 18:26:53.331" endtime="20220717 18:26:53.331"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${final_time}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220716 17:54:41.957" endtime="20220716 17:54:41.957"/>
-</kw>
-<status status="PASS" starttime="20220716 17:54:18.325" endtime="20220716 17:54:41.957"/>
-</kw>
-<status status="PASS" starttime="20220716 17:53:58.091" endtime="20220716 17:54:41.957"/>
+<status status="PASS" starttime="20220717 18:26:10.913" endtime="20220717 18:26:53.331"/>
 </test>
-<status status="PASS" starttime="20220716 17:52:47.334" endtime="20220716 17:54:41.957"/>
+<status status="PASS" starttime="20220717 18:26:10.431" endtime="20220717 18:26:53.342"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TC 1 Downlink in LTE WCDMA">TC 1 Downlink in LTE WCDMA</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 5 Add Contact Validate">TC 5 Add Contact Validate</stat>
 </suite>
 </statistics>
 <errors>
