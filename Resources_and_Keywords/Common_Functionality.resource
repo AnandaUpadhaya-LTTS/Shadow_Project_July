@@ -146,6 +146,7 @@ Call Phone
         AppiumLibrary.Click Element    id=dialpad_voice_call_button
         Sleep    1s
         AppiumLibrary.Click Text    SIM1
+        AppiumLibrary.Wait Until Page Contains    Calling
         Sleep    1s
 
 Send Message

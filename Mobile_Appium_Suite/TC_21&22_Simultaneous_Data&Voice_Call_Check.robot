@@ -4,7 +4,7 @@ Resource        ../Resources_and_Keywords/Common_Functionality.resource
 
 *** Variables ***
 
-${Phone_no}     8011843630
+${Phone_no}     7002539096
 
 *** Test Cases ***
 
