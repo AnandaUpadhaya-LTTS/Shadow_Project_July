@@ -16,7 +16,7 @@ Dict = {1: 'Message_automation_suite.robot', 2: 'Call_suite.robot', 3: 'check_IP
 list1 = ['1']
 today = date.today()
 test_run_no = 0
-initial_path='D:/L&T_Tech/Python_Program/AndroidProject/Mobile_Appium_Suite'
+initial_path='D:/L&T_Tech/Python_Program/AndroidProject/Mobile_Appium_Suite/'
 test_sel_by_num=False
 
 ###########################################################################
@@ -251,7 +251,7 @@ class User:
             msg.showinfo("login details","Invalid credentials")
 
     def forget_user(self):
-        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='anupbasu1421.',database='register_login')
+        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='password',database='website')
         mycursor = mydb.cursor()
 
         username2 = self.email.get()
@@ -290,7 +290,7 @@ class User:
         def reports_check():
             #   window.destroy()
                 filename = filedialog.askopenfilename(
-                initialdir="/home/indranee/Mobile application/Reports/",
+                initialdir="D:/L&T_Tech/Python_Program/AndroidProject/Reports/",
                 title="Select the report file",
                 filetypes=(("Text files",
                             "*.txt*"),
@@ -303,9 +303,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
@@ -355,9 +355,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
@@ -400,9 +400,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -496,7 +496,7 @@ class User:
         def select_single_file():
             global test_run_no
             test_run_no = test_run_no + 1
-            filename = filedialog.askopenfilename(initialdir="E:/LT_Technology_Services/INTERNSHIP/Shadow_project/TestSuite/",
+            filename = filedialog.askopenfilename(initialdir="../Mobile_Appium_Suite/",
                                                   title="Select a File",
                                                   filetypes=(("Text files",
                                                               "*.txt*"),
@@ -510,7 +510,7 @@ class User:
             global test_run_no
             test_run_no = test_run_no + 1
             messagebox.showinfo("showinfo", "Please press Control to select multiple files")
-            filename = filedialog.askopenfilenames(initialdir="E:/LT_Technology_Services/INTERNSHIP/Shadow_project/TestSuite/",
+            filename = filedialog.askopenfilenames(initialdir="../Mobile_Appium_Suite/",
                                                    title="Select a File",
                                                    filetypes=(("Text files",
                                                                "*.txt*"),
@@ -550,11 +550,11 @@ class User:
                 report_file = file_exec[-1] + str(today)
                 report_file = report_file + '.html'
                 print(report_file)
-                path = 'E:/LT_Technology_Services/INTERNSHIP/Shadow_project/Reports/TC77_4G LTE Lab_' + str(today)
+                path = 'D:/L&T_Tech/Python_Program/AndroidProject/Reports/TC_Reposr_Lab_' + str(today)
                 isdir = os.path.isdir(path)
                 if isdir == False:
                     os.mkdir(path)
-                with open('E:/LT_Technology_Services/INTERNSHIP/Shadow_project/report.html', 'r') as firstfile,open(path + '/' + report_file, 'w') as secondfile:
+                with open('D:/L&T_Tech/Python_Program/AndroidProject/report.html', 'r') as firstfile,open(path + '/' + report_file, 'w') as secondfile:
                     for line in firstfile:
                         # write content to second file
                         secondfile.write(line)
@@ -573,11 +573,11 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
-        window.img2 = PhotoImage(file="Interface/Images/test2l.png", master=window)
+        window.img2 = PhotoImage(file="../Interface/Images/test2l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=80, y=660)
-        window.img3 = PhotoImage(file="Interface/Images/test2l.png", master=window)
+        window.img3 = PhotoImage(file="../Interface/Images/test2l.png", master=window)
         Label(window, image=window.img3, border=0, bg='white').place(x=500, y=660)
         frame = Frame(window, width=350, height=550, bg='#fff')
         frame.place(x=480, y=40)
@@ -641,9 +641,9 @@ class User:
         window.configure(bg='white')
         window.resizable(False, False)
 
-        img = PhotoImage(file="Interface/Images/sign.png",master=window)
+        img = PhotoImage(file="../Interface/Images/sign.png",master=window)
         Label(window, image=img, border=0, bg='white').place(x=10, y=80)
-        window.img2 = PhotoImage(file='Interface/Images/lt4_2.png', master=window)
+        window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=5, y=550)
 
 
@@ -664,7 +664,7 @@ class User:
         window.configure(bg='#014b88')
         window.resizable(False, False)
 
-        img = PhotoImage(file="Interface/Images/L&T_Technology_Services_logo.v1.png",master=window)
+        img = PhotoImage(file="../Interface/Images/L&T_Technology_Services_logo.v1.png",master=window)
         Label(window, image=img, border=0, bg='#014b88').place(x=10, y=80)
 
         frame = Frame(window, width=800, height=500, bg='#014b88')
@@ -702,7 +702,7 @@ class User:
             window.configure(bg='#fff')
             window.resizable(False, False)
 
-            img = PhotoImage(file="Interface/Images/sign.png")
+            img = PhotoImage(file="../Interface/Images/sign.png")
             Label(window, image=img, border=0, bg='#0000CD').place(x=10, y=80)
             l2 = Label(window, text=t, bg="#fff", fg='black', bd='5', relief='raised', borderwidth='5', width="40",
                        height="15", font=("Times New Roman", 13))
@@ -724,9 +724,9 @@ class User:
         window.configure(bg='#fff')
         window.resizable(False, False)
 
-        img = PhotoImage(file="Interface/Images/sign.png")
+        img = PhotoImage(file="../Interface/Images/sign.png")
         Label(window, image=img, border=0, bg='#0000CD').place(x=10, y=80)
-        window.img2 = PhotoImage(file='Interface/Images/lt4_2.png', master=window)
+        window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=1, y=550)
         frame = Frame(window, width=500, height=500, bg='#fff')
         frame.place(x=400, y=70)
@@ -820,7 +820,7 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=550, bg='#fff')
@@ -879,10 +879,10 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
     # <<<<<<< HEAD
-        window.img2 = PhotoImage(file='Interface/Images/lt4_2.png', master=window)
+        window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=5, y=650)
     # =======
     # >>>>>>> origin/master
