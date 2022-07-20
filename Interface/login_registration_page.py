@@ -12,7 +12,7 @@ class User:
         self.root.configure(bg='#fff')
         self.root.resizable(False, False)
         # self.img = PhotoImage(file="Interface/Images/sign.png", master= self.root)
-        self.bg = ImageTk.PhotoImage(file="Interface/Images/ltts.jpg")
+        self.bg = ImageTk.PhotoImage(file="../Interface/Images/ltts.jpg")
         Label(self.root, image=self.bg, border=0, bg='white').place(x=0, y=0)
 
 
@@ -37,10 +37,10 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        self.img = PhotoImage(file="Interface/Images/register.png",master=window)
+        self.img = PhotoImage(file="../Interface/Images/register.png",master=window)
         Label(window, image=self.img, border=0, bg='white').place(x=70, y=200)
 
-        self.img1 = ImageTk.PhotoImage(file="Interface/Images/LT.jpg",master =window)
+        self.img1 = ImageTk.PhotoImage(file="../Interface/Images/LT.jpg",master =window)
         Label(window, image=self.img1, border=0, bg='white').pack()
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -105,10 +105,10 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/login.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/login.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=200)
 
-        self.img1 = ImageTk.PhotoImage(file="Interface/Images/LT.jpg", master=window)
+        self.img1 = ImageTk.PhotoImage(file="../Interface/Images/LT.jpg", master=window)
         Label(window, image=self.img1, border=0, bg='white').pack()
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -159,7 +159,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="D:/L&T_Tech/Python_Program/AndroidProject/Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -203,7 +203,7 @@ class User:
 
 
     def register_user(self):
-        mydb = mysql.connector.connect(host='localhost', port='3306',user='root',password='anupbasu1421.',database='register_login')
+        mydb = mysql.connector.connect(host='localhost', port='3306',user='root',password='password',database='website')
         mycursor = mydb.cursor()
 
         username = self.user.get()
@@ -216,7 +216,7 @@ class User:
         msg.showinfo("Registration details","Registered successfully")
 
     def login_user(self):
-        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='anupbasu1421.',database='register_login')
+        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='password',database='website')
         mycursor = mydb.cursor()
 
         username1 = self.user_login.get()
@@ -237,7 +237,7 @@ class User:
             msg.showinfo("login details","Invalid credentials")
 
     def forget_user(self):
-        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='anupbasu1421.',database='register_login')
+        mydb = mysql.connector.connect(host='localhost', port='3306', user='root', password='password',database='website')
         mycursor = mydb.cursor()
 
         username2 = self.email.get()
@@ -255,7 +255,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="D:/L&T_Tech/Python_Program/AndroidProject/Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -282,7 +282,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
