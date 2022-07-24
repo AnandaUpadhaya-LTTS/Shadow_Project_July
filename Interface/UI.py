@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter
 from PIL import ImageTk
 import mysql.connector
 import tkinter.messagebox as msg
@@ -16,7 +17,7 @@ Dict = {1: 'Message_automation_suite.robot', 2: 'Call_suite.robot', 3: 'check_IP
 list1 = ['1']
 today = date.today()
 test_run_no = 0
-initial_path='D:/L&T_Tech/Python_Program/AndroidProject/Mobile_Appium_Suite/'
+initial_path='../Mobile_Appium_Suite/'
 test_sel_by_num=False
 
 ###########################################################################
@@ -28,7 +29,7 @@ class User:
         self.root.configure(bg='#fff')
         self.root.resizable(False, False)
         # self.img = PhotoImage(file="Interface/Images/sign.png", master= self.root)
-        self.bg = ImageTk.PhotoImage(file="../Interface/Images/ltts.jpg")
+        self.bg = ImageTk.PhotoImage(file="Interface/Images/ltts.jpg")
         Label(self.root, image=self.bg, border=0, bg='white').place(x=0, y=0)
 
 
@@ -51,10 +52,10 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        self.img = PhotoImage(file="../Interface/Images/register.png",master=window)
+        self.img = PhotoImage(file="Interface/Images/register.png",master=window)
         Label(window, image=self.img, border=0, bg='white').place(x=70, y=200)
 
-        self.img1 = ImageTk.PhotoImage(file="../Interface/Images/LT.jpg",master =window)
+        self.img1 = ImageTk.PhotoImage(file="Interface/Images/LT.jpg",master =window)
         Label(window, image=self.img1, border=0, bg='white').pack()
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -119,10 +120,10 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/login.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/login.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=200)
 
-        self.img1 = ImageTk.PhotoImage(file="../Interface/Images/LT.jpg", master=window)
+        self.img1 = ImageTk.PhotoImage(file="Interface/Images/LT.jpg", master=window)
         Label(window, image=self.img1, border=0, bg='white').pack()
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -173,7 +174,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -245,7 +246,11 @@ class User:
         if c>=1:
             mycursor.execute("insert into login values(%s,%s)",(username1,password1))
             mydb.commit()
-            mycursor.execute(self.field_page())
+            mycursor.execute(self.second_page())
+
+
+
+
 
         else:
             msg.showinfo("login details","Invalid credentials")
@@ -290,7 +295,7 @@ class User:
         def reports_check():
             #   window.destroy()
                 filename = filedialog.askopenfilename(
-                initialdir="D:/L&T_Tech/Python_Program/AndroidProject/Reports/",
+                initialdir="../Reports/",
                 title="Select the report file",
                 filetypes=(("Text files",
                             "*.txt*"),
@@ -303,9 +308,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
@@ -355,9 +360,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
@@ -400,9 +405,9 @@ class User:
         window.geometry("1000x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=60)
-        window.img2 = PhotoImage(file="../Interface/Images/test_l.png", master=window)
+        window.img2 = PhotoImage(file="Interface/Images/test_l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=50, y=460)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -492,7 +497,6 @@ class User:
                 list1.append(files[i])
                 i = i + 1
 
-
         def select_single_file():
             global test_run_no
             test_run_no = test_run_no + 1
@@ -550,14 +554,13 @@ class User:
                 report_file = file_exec[-1] + str(today)
                 report_file = report_file + '.html'
                 print(report_file)
-                path = 'D:/L&T_Tech/Python_Program/AndroidProject/Reports/TC_Reposr_Lab_' + str(today)
+                path = 'Reports/TC_Reports_' + str(today)
                 isdir = os.path.isdir(path)
+                source = r'D:/L&T_Tech/Python_Program/AndroidProject/report.html'
+                dest = path + '/' + report_file
                 if isdir == False:
                     os.mkdir(path)
-                with open('D:/L&T_Tech/Python_Program/AndroidProject/report.html', 'r') as firstfile,open(path + '/' + report_file, 'w') as secondfile:
-                    for line in firstfile:
-                        # write content to second file
-                        secondfile.write(line)
+                shutil.copy(source, dest)
 
         def op1():
             window.destroy()
@@ -573,11 +576,11 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
-        window.img2 = PhotoImage(file="../Interface/Images/test2l.png", master=window)
+        window.img2 = PhotoImage(file="Interface/Images/test2l.png", master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=80, y=660)
-        window.img3 = PhotoImage(file="../Interface/Images/test2l.png", master=window)
+        window.img3 = PhotoImage(file="Interface/Images/test2l.png", master=window)
         Label(window, image=window.img3, border=0, bg='white').place(x=500, y=660)
         frame = Frame(window, width=350, height=550, bg='#fff')
         frame.place(x=480, y=40)
@@ -641,9 +644,9 @@ class User:
         window.configure(bg='white')
         window.resizable(False, False)
 
-        img = PhotoImage(file="../Interface/Images/sign.png",master=window)
+        img = PhotoImage(file="Interface/Images/sign.png",master=window)
         Label(window, image=img, border=0, bg='white').place(x=10, y=80)
-        window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
+        window.img2 = PhotoImage(file='Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=5, y=550)
 
 
@@ -664,7 +667,7 @@ class User:
         window.configure(bg='#014b88')
         window.resizable(False, False)
 
-        img = PhotoImage(file="../Interface/Images/L&T_Technology_Services_logo.v1.png",master=window)
+        img = PhotoImage(file="Interface/Images/L&T_Technology_Services_logo.v1.png",master=window)
         Label(window, image=img, border=0, bg='#014b88').place(x=10, y=80)
 
         frame = Frame(window, width=800, height=500, bg='#014b88')
@@ -687,6 +690,7 @@ class User:
     def devices_check(self):
         def op2():
             t = subprocess.check_output("adb devices", shell=True)
+            #t = subprocess.Popen("adb devices", stdout=subprocess.PIPE, shell=True)
             t = t.decode('utf-8')
             window.destroy()
             op3(t)
@@ -702,7 +706,7 @@ class User:
             window.configure(bg='#fff')
             window.resizable(False, False)
 
-            img = PhotoImage(file="../Interface/Images/sign.png")
+            img = PhotoImage(file="Interface/Images/sign.png")
             Label(window, image=img, border=0, bg='#0000CD').place(x=10, y=80)
             l2 = Label(window, text=t, bg="#fff", fg='black', bd='5', relief='raised', borderwidth='5', width="40",
                        height="15", font=("Times New Roman", 13))
@@ -724,7 +728,7 @@ class User:
         window.configure(bg='#fff')
         window.resizable(False, False)
 
-        img = PhotoImage(file="../Interface/Images/sign.png")
+        img = PhotoImage(file="Interface/Images/sign.png")
         Label(window, image=img, border=0, bg='#0000CD').place(x=10, y=80)
         window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=1, y=550)
@@ -820,7 +824,7 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=550, bg='#fff')
@@ -879,10 +883,10 @@ class User:
         window.geometry("1000x900+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
     # <<<<<<< HEAD
-        window.img2 = PhotoImage(file='../Interface/Images/lt4_2.png', master=window)
+        window.img2 = PhotoImage(file='Interface/Images/lt4_2.png', master=window)
         Label(window, image=window.img2, border=0, bg='white').place(x=5, y=650)
     # =======
     # >>>>>>> origin/master
@@ -910,6 +914,6 @@ class User:
         window.mainloop()
 
 
-root =Tk()
+root =tkinter.Tk()
 obj = User(root)
 root.mainloop()

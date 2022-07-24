@@ -159,7 +159,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="D:/L&T_Tech/Python_Program/AndroidProject/Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
@@ -255,7 +255,7 @@ class User:
         window.geometry("900x750+100+50")
         window.configure(bg='#fff')
         window.resizable(False, False)
-        window.img = PhotoImage(file="D:/L&T_Tech/Python_Program/AndroidProject/Interface/Images/sign.png", master=window)
+        window.img = PhotoImage(file="../Interface/Images/sign.png", master=window)
         Label(window, image=window.img, border=0, bg='white').place(x=50, y=80)
 
         frame = Frame(window, width=350, height=390, bg='#fff')
