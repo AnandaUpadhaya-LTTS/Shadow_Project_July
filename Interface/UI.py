@@ -115,6 +115,9 @@ class User:
         Button(frame, width=39, pady=7, text='Sign up', bg='#57a1f8', cursor="hand2", fg='white', border=0, command=self.register_user).place(x=75, y=280)
 
     def login(self):
+        def exit1():
+            self.login_user()
+            window.destroy()
         window = Tk()
         window.title("SignIn")
         window.geometry("900x750+100+50")
@@ -164,7 +167,7 @@ class User:
 
         Frame(frame, width=295, height=2, bg='black').place(x=75, y=177)
 
-        Button(frame, width=39, pady=7, text='Sign In', bg='#57a1f8', cursor="hand2", fg='white',command=self.login_user, border=0).place(x=75, y=207)
+        Button(frame, width=39, pady=7, text='Sign In', bg='#57a1f8', cursor="hand2", fg='white',command=exit1, border=0).place(x=75, y=207)
 
         Button(frame, text="Forget Password?", cursor="hand2", bg="white", fg="#d77337", bd=0,font=("times new roman", 10),command=self.forget_password).place(x=160, y=250)
 
@@ -480,7 +483,7 @@ class User:
                      font=("Microdoft Yahei UI Light", 11, 'bold'), command=op2)
         bt2.place(x=40, y=320)
 
-        window.mainloop()
+        # window.mainloop()
 
     def test_plan(self):
 
@@ -621,7 +624,7 @@ class User:
         bt3 = Button(frame, text="Back", bg="#57a1f8", fg='black', bd='5', height="2", width="25",
                      cursor='hand2', font=("Microdoft Yahei UI Light", 11, 'bold'), command=op1)
         bt3.place(x=40, y=420)
-        window.mainloop()
+        # window.mainloop()
 
 
 
@@ -684,7 +687,7 @@ class User:
         b1 = Button(frame, width=39, pady=7, text='Back', bg='#57a1f8', fg='white', border=2,
                     relief='raised', command=ret).place(x=75, y=350)
 
-        window.mainloop()
+        # window.mainloop()
 
 
     def devices_check(self):
@@ -715,7 +718,7 @@ class User:
             b1 = Button(frame, width=10, pady=7, text='Back', bg='#57a1f8', fg='white', border=0,
                         relief='raised', command=ret_here)
             b1.place(x=300, y=100)
-            window.mainloop()
+            # window.mainloop()
 
         def ret():
             window.destroy()
@@ -757,7 +760,7 @@ class User:
             x=75, y=70)
         b2 = Button(frame, width=39, pady=7, text='Assign more devices', bg='#57a1f8', fg='white', border=0).place(x=75, y=150)
         b2 = Button(frame, width=39, pady=7, text='Back', bg='#57a1f8', fg='white', border=0, command=ret).place(x=75,y=250)
-        window.mainloop()
+        # window.mainloop()
 
     def test_select_num(self):
         def one():
@@ -860,7 +863,7 @@ class User:
         bt3 = Button(frame, text="Back", bg="#57a1f8", fg='black', bd='5', height="2", width="25",
                      cursor='hand2', font=("Microdoft Yahei UI Light", 11, 'bold',), command=op1)
         bt3.place(x=40, y=420)
-        window.mainloop()
+        # window.mainloop()
 
     def status(self):
         def op1():
@@ -911,7 +914,7 @@ class User:
         bt3 = Button(frame, text="Back", bg="#57a1f8", fg='black', bd='5', height="2", width="25",
                      cursor='hand2', font=("Microdoft Yahei UI Light", 11, 'bold'), command=back)
         bt3.place(x=40, y=vary)
-        window.mainloop()
+        # window.mainloop()
 
 
 root =tkinter.Tk()
